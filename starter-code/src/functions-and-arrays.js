@@ -13,7 +13,6 @@ const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard',
 
 /*** ES5 ***/
 function findLongestWord(words) {
-  const longestWord = '';
   if (words.length === 0) {
     return null;
   }
@@ -30,7 +29,6 @@ function findLongestWord(words) {
 
 /*** ES6 ***/
 // const findLongestWord = (words) => {
-//   const longestWord = '';
 //   if (words.length === 0) {
 //     return null;
 //   }
@@ -53,7 +51,7 @@ const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 function sumArray(numbers) {
   return numbers.reduce(function (a, b) {
     return a + b;
-  },0);
+  }, 0);
 }
 
 /*** ES6 ***/
@@ -65,6 +63,33 @@ function sumArray(numbers) {
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+
+/*** ES5 ***/
+function averageNumbers(numbersAvg) {
+  if (numbersAvg.length === 0) {
+    return null;
+  }
+
+  const sum = numbersAvg.reduce(function (a, b) {
+    return a + b;
+  })
+
+  return sum / numbersAvg.length;
+}
+
+/*** ES6 ***/
+// const averageNumbers = (numbersAvg) => {
+//   if (numbersAvg.length === 0) {
+//     return null;
+//   }
+
+//   const sum = numbersAvg.reduce((a, b) => a + b);
+
+//   return sum / numbersAvg.length;
+// }
+
+// console.log(averageNumbers(numbersAvg));
+
 
 // Level 2: Array of strings
 const wordsArr = [
@@ -79,6 +104,33 @@ const wordsArr = [
   'fuel',
   'palace'
 ];
+
+/*** ES5 ***/
+function averageWordLength(wordsArr) {
+  if (wordsArr.length === 0) {
+    return null;
+  }
+
+  const word = wordsArr.reduce(function (a, b) {
+    return a + b.length;
+  }, 0)
+
+  return word / wordsArr.length;
+}
+
+/*** ES6 ***/
+// const averageWordLength = (wordsArr) => {
+//   if (wordsArr.length === 0) {
+//     return null;
+//   }
+
+//   const word = wordsArr.reduce((a, b) => a + b.length, 0)
+
+//   return word / wordsArr.length;
+// }
+
+// console.log(averageWordLength(wordsArr));
+
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
