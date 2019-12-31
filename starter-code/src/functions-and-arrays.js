@@ -21,11 +21,11 @@ function findLongestWord(words) {
   return words.reduce(function (a, b) {
     if (a.length >= b.length) {
       return a;
-  }else{
-    return b;
-  }
-  return words.reduce();
-})
+    } else {
+      return b;
+    }
+    return words.reduce();
+  })
 }
 
 /*** ES6 ***/
@@ -48,6 +48,19 @@ function findLongestWord(words) {
 // Iteration #3: Calculate the sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+
+/*** ES5 ***/
+function sumArray(numbers) {
+  return numbers.reduce(function (a, b) {
+    return a + b;
+  },0);
+}
+
+/*** ES6 ***/
+// const sumArray = (numbers) => { return numbers.reduce((a, b) => a + b, 0);
+// }
+
+// console.log(sumArray(numbers));
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
