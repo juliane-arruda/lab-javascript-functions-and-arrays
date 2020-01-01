@@ -147,6 +147,19 @@ const wordsUnique = [
   'bring'
 ];
 
+/*** ES5 ***/
+function uniquifyArray(wordsUnique) {
+  return wordsUnique.filter(function (word, index) {
+    return wordsUnique.indexOf(word) === index;
+  })
+}
+
+/*** ES6 ***/
+// const uniquifyArray = (wordsUnique) => wordsUnique.filter((word, index) => wordsUnique.indexOf(word) === index);
+
+// console.log(uniquifyArray(wordsUnique));
+
+
 // Iteration #6: Find elements
 const wordsFind = [
   'machine',
