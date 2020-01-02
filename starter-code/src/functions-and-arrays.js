@@ -172,6 +172,18 @@ const wordsFind = [
   'disobedience'
 ];
 
+/*** ES5 ***/
+function doesWordExist(wordsFind, letter) {
+  return wordsFind.some(function (word) {
+    return word === letter;
+  })
+}
+
+/*** ES6 ***/
+// const doesWordExist = (wordsFind, letter) => wordsFind.some((word) => word === letter);
+
+// console.log(doesWordExist(wordsFind, 'kiki'));
+
 // Iteration #7: Count repetition
 const wordsCount = [
   'machine',
