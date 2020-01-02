@@ -1,4 +1,4 @@
-// Iteration #1: Find the maximum
+/* Iteration #1: Find the maximum */
 
 /*** ES5 ***/
 function maxOfTwoNumbers(number01, number02) {
@@ -8,24 +8,40 @@ function maxOfTwoNumbers(number01, number02) {
 /*** ES6 ***/
 // const maxOfTwoNumbers = (number01, number02) => Math.max(number01, number02);
 
-// Iteration #2: Find longest word
+/* Iteration #2: Find longest word */
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-/*** ES5 ***/
 function findLongestWord(words) {
   if (words.length === 0) {
     return null;
   }
 
-  return words.reduce(function (a, b) {
-    if (a.length >= b.length) {
-      return a;
+  let result = words[0];
+  for (let index = 1; index < words.length; index++) {
+    const element = words[index];
+    if (result.length >= element.length) {
+      result = result;
     } else {
-      return b;
+      result = element;
     }
-    return words.reduce();
-  })
+  }
+  return result;
 }
+
+/*** ES5 ***/
+// function findLongestWord(words) {
+//   if (words.length === 0) {
+//     return null;
+// }
+
+//   return words.reduce(function (a, b) {
+//     if (a.length >= b.length) {
+//       return a;
+//     } else {
+//       return b;
+//     }
+//   })
+// }
 
 /*** ES6 ***/
 // const findLongestWord = (words) => {
@@ -42,17 +58,27 @@ function findLongestWord(words) {
 // }
 
 // console.log(findLongestWord(words));
-
-// Iteration #3: Calculate the sum
+/* Iteration #3: Calculate the sum */
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-/*** ES5 ***/
 function sumArray(numbers) {
-  return numbers.reduce(function (a, b) {
-    return a + b;
-  }, 0);
+  let zero = 0;
+  for (let index = 0; index < numbers.length; index++) {
+    const element = numbers[index];
+    if (element) {
+      zero += element;
+    }
+  }
+  return zero;
 }
+
+/*** ES5 ***/
+// function sumArray(numbers) {
+//   return numbers.reduce(function (a, b) {
+//     return a + b;
+//   }, 0);
+// }
 
 /*** ES6 ***/
 // const sumArray = (numbers) => { return numbers.reduce((a, b) => a + b, 0);
@@ -60,22 +86,36 @@ function sumArray(numbers) {
 
 // console.log(sumArray(numbers));
 
-// Iteration #4: Calculate the average
-// Level 1: Array of numbers
+/* Iteration #4: Calculate the average */
+/* Level 1: Array of numbers */
+
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-/*** ES5 ***/
 function averageNumbers(numbersAvg) {
   if (numbersAvg.length === 0) {
     return null;
   }
 
-  const sum = numbersAvg.reduce(function (a, b) {
-    return a + b;
-  })
-
-  return sum / numbersAvg.length;
+  let zero = 0;
+  for (let index = 0; index < numbersAvg.length; index++) {
+    const element = numbersAvg[index];
+    zero += element;
+  }
+  return zero / numbersAvg.length;
 }
+
+/*** ES5 ***/
+// function averageNumbers(numbersAvg) {
+//   if (numbersAvg.length === 0) {
+//     return null;
+//   }
+
+//   const sum = numbersAvg.reduce(function (a, b) {
+//     return a + b;
+//   })
+
+//   return sum / numbersAvg.length;
+// }
 
 /*** ES6 ***/
 // const averageNumbers = (numbersAvg) => {
@@ -90,8 +130,8 @@ function averageNumbers(numbersAvg) {
 
 // console.log(averageNumbers(numbersAvg));
 
+/* Level 2: Array of strings */
 
-// Level 2: Array of strings
 const wordsArr = [
   'seat',
   'correspond',
@@ -105,18 +145,31 @@ const wordsArr = [
   'palace'
 ];
 
-/*** ES5 ***/
 function averageWordLength(wordsArr) {
   if (wordsArr.length === 0) {
     return null;
   }
 
-  const word = wordsArr.reduce(function (a, b) {
-    return a + b.length;
-  }, 0)
-
-  return word / wordsArr.length;
+  let zero = 0;
+  for (let index = 0; index < wordsArr.length; index++) {
+    const element = wordsArr[index];
+    zero += element.length;
+  }
+  return zero / wordsArr.length;
 }
+
+/*** ES5 ***/
+// function averageWordLength(wordsArr) {
+//   if (wordsArr.length === 0) {
+//     return null;
+//   }
+
+//   const word = wordsArr.reduce(function (a, b) {
+//     return a + b.length;
+//   }, 0)
+
+//   return word / wordsArr.length;
+// }
 
 /*** ES6 ***/
 // const averageWordLength = (wordsArr) => {
@@ -131,8 +184,8 @@ function averageWordLength(wordsArr) {
 
 // console.log(averageWordLength(wordsArr));
 
+/* Iteration #5: Unique arrays */
 
-// Iteration #5: Unique arrays
 const wordsUnique = [
   'crab',
   'poison',
@@ -147,20 +200,31 @@ const wordsUnique = [
   'bring'
 ];
 
-/*** ES5 ***/
 function uniquifyArray(wordsUnique) {
-  return wordsUnique.filter(function (word, index) {
-    return wordsUnique.indexOf(word) === index;
-  })
+  const empty = [];
+  for (let index = 0; index < wordsUnique.length; index++) {
+    const word = wordsUnique[index];
+    if (wordsUnique.indexOf(word) === index) {
+      empty.push(word);
+    }
+  }
+  return empty;
 }
+
+/*** ES5 ***/
+// function uniquifyArray(wordsUnique) {
+//   return wordsUnique.filter(function (word, index) {
+//     return wordsUnique.indexOf(word) === index;
+//   })
+// }
 
 /*** ES6 ***/
 // const uniquifyArray = (wordsUnique) => wordsUnique.filter((word, index) => wordsUnique.indexOf(word) === index);
 
 // console.log(uniquifyArray(wordsUnique));
 
+/* Iteration #6: Find elements */
 
-// Iteration #6: Find elements
 const wordsFind = [
   'machine',
   'subset',
@@ -172,19 +236,34 @@ const wordsFind = [
   'disobedience'
 ];
 
-/*** ES5 ***/
 function doesWordExist(wordsFind, letter) {
-  return wordsFind.some(function (word) {
-    return word === letter;
-  })
+  if (wordsFind.length === 0) {
+    return false;
+  }
+
+  for (let index = 0; index < wordsFind.length; index++) {
+    const word = wordsFind[index];
+    if (word === letter) {
+      return true;
+    }
+  }
+  return false;
 }
+
+/*** ES5 ***/
+// function doesWordExist(wordsFind, letter) {
+//   return wordsFind.some(function (word) {
+//     return word === letter;
+//   })
+// }
 
 /*** ES6 ***/
 // const doesWordExist = (wordsFind, letter) => wordsFind.some((word) => word === letter);
 
 // console.log(doesWordExist(wordsFind, 'kiki'));
 
-// Iteration #7: Count repetition
+/* Iteration #7: Count repetition */
+
 const wordsCount = [
   'machine',
   'matter',
@@ -199,13 +278,24 @@ const wordsCount = [
   'matter'
 ];
 
-/*** ES5 ***/
 function howManyTimes(wordsCount, letter) {
-  const newWord = wordsCount.filter(function (word) {
-    return letter === word;
-  })
-  return newWord.length;
+  let empty = [];
+  for (let index = 0; index < wordsCount.length; index++) {
+    const word = wordsCount[index];
+    if (letter === word) {
+      empty.push(word);
+    }
+  }
+  return empty.length;
 }
+
+/*** ES5 ***/
+// function howManyTimes(wordsCount, letter) {
+//   const newWord = wordsCount.filter(function (word) {
+//     return letter === word;
+//   })
+//   return newWord.length;
+// }
 
 /*** ES6 ***/
 // const howManyTimes = (wordsCount, letter) => {
@@ -215,7 +305,7 @@ function howManyTimes(wordsCount, letter) {
 
 // console.log(howManyTimes(wordsCount, 'matter'));
 
-// Iteration #8: Bonus
+/* Iteration #8: Bonus */
 
 const matrix = [
   [8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],
@@ -239,3 +329,7 @@ const matrix = [
   [20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
+
+function greatestProduct(matrix) {
+
+}
