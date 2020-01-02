@@ -199,6 +199,22 @@ const wordsCount = [
   'matter'
 ];
 
+/*** ES5 ***/
+function howManyTimes(wordsCount, letter) {
+  const newWord = wordsCount.filter(function (word) {
+    return letter === word;
+  })
+  return newWord.length;
+}
+
+/*** ES6 ***/
+// const howManyTimes = (wordsCount, letter) => {
+//   const newWord = wordsCount.filter((word) => letter === word)
+//   return newWord.length;
+// }
+
+// console.log(howManyTimes(wordsCount, 'matter'));
+
 // Iteration #8: Bonus
 
 const matrix = [
